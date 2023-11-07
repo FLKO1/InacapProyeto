@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CitaController extends Controller
 {
     public function index(){
-        $citas = Cita::orderBy('id', 'desc')->paginate();
+        $citas = Cita::orderBy('id')->paginate();
         return view('citas.index', compact('citas'));
     }
 

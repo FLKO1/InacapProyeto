@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\CitaController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +32,13 @@ Route::post('citas', [CitaController::class, 'store'])->name('citas.store');
 
 Route::put('citas/{cita}', [CitaController::class, 'update'])->name('citas.update');
 
+/*---------------------------------------------------------------------------*/
+/*---------------Ruta Doctor--------------------------------------------*/
+
 Route::post('/doctor/login', [LoginController::class, 'login'])->name('doctor.login');
+
+/*---------------------------------------------------------------------------*/
+/*---------------Ruta pacientes--------------------------------------------*/
+Route::get('/pacientes/create', [PacienteController::class, 'create'])->name('pacientes.create');
+
+Route::post('/pacientes', [PacienteController::class, 'store'])->name('pacientes.store');
